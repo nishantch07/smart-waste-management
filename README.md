@@ -1,1 +1,1 @@
-# diji
+# smart waste management
