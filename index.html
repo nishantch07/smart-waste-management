@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garbage Bin Route Planner</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f7f0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c5e2e;
+            margin-bottom: 20px;
+        }
+        #map-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        #map {
+            height: 500px;
+            width: 100%;
+            border: 2px solid #4CAF50;
+            border-radius: 4px;
+        }
+        #status {
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #2c5e2e;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        #resetBtn {
+            background-color: #f44336;
+        }
+        #resetBtn:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Garbage Bin Route Planner</h1>
+        <div id="map-container">
+            <div id="map"></div>
+        </div>
+        <div id="status">Select a start location</div>
+        <div class="button-container">
+            <button onclick="findPath()" id="findPathBtn" disabled>Find Path</button>
+            <button onclick="resetLocations()" id="resetBtn">Reset</button>
+        </div>
+    </div>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhAGIQuLfAteh8MN3e-lbmsF4b8-5dwpg&callback=initMap" async defer></script>
+
+</body>
+</html>
+
